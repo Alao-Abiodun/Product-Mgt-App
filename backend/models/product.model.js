@@ -18,11 +18,13 @@ const productSchema = new Schema({
         type: Schema.Types.ObjectId,
         required: true,
         ref: 'User'
-    }
-    comment: [{
+    },
+    comment:[ {
+       
         type: Schema.Types.ObjectId,
         ref: 'Comment'
-    }]
+       
+    }],
     name: {
         type: String,
         require: true
@@ -41,6 +43,6 @@ const productSchema = new Schema({
 
 productSchema.index({coordinates: '2dsphere'})
 
-const Product = require('Product', productSchema);
+const Product = model('Product', productSchema);
 
 module.exports = Product;

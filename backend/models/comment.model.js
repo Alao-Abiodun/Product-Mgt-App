@@ -8,7 +8,13 @@ const commentSchema = new Schema({
     },
     comments: {
         type: String,
-    }
+    },
+    reply: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Reply'
+        }
+    ]
 }, {
     timestamps: true
 })

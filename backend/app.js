@@ -47,7 +47,9 @@ app.use(express.static("views"));
 app.use(mongoSanitize()); // Checks the request headers, query strings, params for malicious codes
 
 // Import all routes
-// const { authRouter } = require("./routes/auth/index");
+const { authRouter } = require("./routes/auth/index");
+const {userRouter} = require('./routes/user/user.route');
+const {productRouter} = require('./routes/product/product.route')
 
 //default Route
 app.get("/", (req, res) => {
@@ -60,7 +62,9 @@ app.get("/api/v1/home", (req, res) => {
 });
 
 //   Routes Middleware
-// app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/auth", authRouter);
+app.use('/api/v1/user', userRouter);
+app.use('/api/v1/product', productRouter);
 
 // Unhandled Routes
 app.all("*", (req, res) => {
