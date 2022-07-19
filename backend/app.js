@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 const mongoSanitize = require("express-mongo-sanitize");
 // const key = require("./utils/libs/gen-keys");
 
-// const globalErrorHandler = require("./controllers/error.controller");
+const globalErrorHandler = require("./controllers/error.controller");
 
 dotenv.config();
 
@@ -70,6 +70,6 @@ app.all("*", (req, res) => {
 });
 
 // Global Error Handler
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 module.exports = app;
