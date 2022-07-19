@@ -7,11 +7,11 @@
  */
 
 const errorResMsg = (res, code, message) => {
-    res.status(code).json({
-        status: 'error',
-        message
-    })
-}
+  return res.status(code).json({
+    status: "error",
+    message,
+  });
+};
 
 /**
  * Success JSON to be sent
@@ -22,18 +22,18 @@ const errorResMsg = (res, code, message) => {
  */
 
 const successResMsg = (res, code, responseData) => {
-    const {message, ...data} = reqponseData;
-    res.status(code).json({
-        status: 'success',
-        message,
-        data
-    })
-}
+  const { message, ...data } = responseData;
+  return res.status(code).json({
+    status: "success",
+    message,
+    data,
+  });
+};
 
 const redirectUrl = (res, url) => res.status(200).redirect(url);
 
 module.exports = {
-    errorResMsg,
-    successResMsg,
-    redirectUrl
-}
+  errorResMsg,
+  successResMsg,
+  redirectUrl,
+};
