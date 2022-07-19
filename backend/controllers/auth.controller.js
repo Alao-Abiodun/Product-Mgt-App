@@ -59,5 +59,17 @@ exports.createUser = async (req, res, next) => {
 
 exports.login = catchAsync(async (req, res, next) => {
   try {
-  } catch (error) {}
+    const { email, password } = req.body;
+    const user = await User.findOne({ email }).select("+password");
+    if (!user) {
+      return next(new AppError("Invalid credentials", 401));
+    }
+    const isMatch = await user.comparePassword(password, user.password);
+    if (!isMatch) {
+      return next(new AppError("Invalid credentials", 401));
+    }
+    createSendToken(user, 200, res);
+  } catch (error) {
+    return next(new AppError(error.message, error.statusCode));
+  }
 });
