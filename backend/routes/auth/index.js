@@ -12,6 +12,7 @@ router.post(
   validateSchema(userSignUpSchema),
   authController.createUser
 );
+
 router.post("/login", validateSchema(loginSchema), authController.login);
 
 module.exports.authRouter = router;

@@ -3,7 +3,6 @@ const { signAccessToken } = require("../utils/libs/jwt-helper");
 const { successResMsg, errorResMsg } = require("../utils/libs/response");
 const AppError = require("../utils/libs/appError");
 const catchAsync = require("../utils/libs/catchAsync");
-const { cloudinaryUploadMethod } = require("../utils/libs/cloudinaryUpload");
 
 const URL = (process.env.NODE_ENV = "development"
   ? process.env.FRONT_END_DEV_URL
@@ -57,19 +56,36 @@ exports.createUser = async (req, res, next) => {
   }
 };
 
-exports.login = catchAsync(async (req, res, next) => {
+exports.login = async (req, res, next) => {
   try {
+    let user;
+
     const { email, password } = req.body;
-    const user = await User.findOne({ email }).select("+password");
+    // Check if email and password exists
+    if (!email || !password) {
+      return next(new AppError("Please provide email and password!", 400));
+    }
+
+    // Check if the user exists and password correct
+    user = await User.findOne({ email }).select("+password");
+
     if (!user) {
-      return next(new AppError("Invalid credentials", 401));
+      return next(new AppError("Invalid email or password", 401));
     }
-    const isMatch = await user.comparePassword(password, user.password);
-    if (!isMatch) {
-      return next(new AppError("Invalid credentials", 401));
+
+    // Check if password is correct
+    const isPasswordCorrect = await user.correctPassword(
+      password,
+      user.password
+    );
+
+    if (!isPasswordCorrect) {
+      return next(new AppError("Invalid email or password", 401));
     }
+
+    // If all true, send token to user
     createSendToken(user, 200, res);
   } catch (error) {
     return next(new AppError(error.message, error.statusCode));
   }
-});
+};
