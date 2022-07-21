@@ -4,7 +4,6 @@ const path = require("path");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-// const rateLimit = require("express-rate-limit");
 const mongoSanitize = require("express-mongo-sanitize");
 const key = require("./utils/libs/gen-keys");
 
@@ -26,15 +25,6 @@ app.use(helmet());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
-
-// Limit Request from same API
-// const limiter = rateLimit({
-//   max: 1000,
-//   windowMs: 60 * 60 * 1000,
-//   message: "Too many request from this IP, please try again in an hour!",
-// });
-
-//app.use("/api", limiter);
 
 app.use(cors());
 
