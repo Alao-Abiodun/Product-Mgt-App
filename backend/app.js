@@ -51,6 +51,7 @@ const { authRouter } = require("./routes/auth/index");
 const { userRouter } = require("./routes/user/user.route");
 const { productRouter } = require("./routes/product/product.route");
 const { commentRouter } = require("./routes/comment/comment.route");
+const { ReplyRouter } = require("./routes/reply/reply.route");
 
 //default Route
 app.get("/", (req, res) => {
@@ -67,6 +68,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/product", productRouter);
 app.use("/api/v1/comment", commentRouter);
+app.use("/api/v1/reply", ReplyRouter);
 
 // Unhandled Routes
 app.all("*", (req, res) => {
