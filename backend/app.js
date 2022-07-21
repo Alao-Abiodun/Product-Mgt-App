@@ -55,12 +55,12 @@ const { ReplyRouter } = require("./routes/reply/reply.route");
 
 //default Route
 app.get("/", (req, res) => {
-  res.json({ message: `Welcome to Fixers API v1` });
+  res.json({ message: `Welcome to Product Management API v1` });
 });
 
 // Home Route
 app.get("/api/v1/home", (req, res) => {
-  res.json({ message: `Welcome to Fixers API v1` });
+  res.json({ message: `Welcome to Product Management API v1` });
 });
 
 //   Routes Middleware
