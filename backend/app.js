@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 // const rateLimit = require("express-rate-limit");
 const mongoSanitize = require("express-mongo-sanitize");
-// const key = require("./utils/libs/gen-keys");
+const key = require("./utils/libs/gen-keys");
 
 const globalErrorHandler = require("./controllers/error.controller");
 
