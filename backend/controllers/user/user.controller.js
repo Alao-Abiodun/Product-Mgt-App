@@ -13,7 +13,11 @@ exports.viewProductBySpecifiedLocation = catchAsync(async (req, res) => {
     if (!products) {
       return errorResMsg(res, 404, "No products found");
     }
+    const dataInfo = {
+      message: "products found successfully",
+      products,
+    };
     // if products are found, return them in the response
-    return successResMsg(res, 200, products);
+    return successResMsg(res, 200, dataInfo);
   } catch (error) {}
 });

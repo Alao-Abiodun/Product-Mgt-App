@@ -1,4 +1,5 @@
 const Product = require("../../models/product.model");
+const Comment = require("../../models/comment.model");
 const { successResMsg, errorResMsg } = require("../../utils/libs/response");
 const AppError = require("../../utils/libs/appError");
 const catchAsync = require("../../utils/libs/catchAsync");
@@ -25,3 +26,32 @@ exports.uploadProduct = async (req, res, next) => {
     return next(new AppError(error.message, 500));
   }
 };
+
+exports.fetchProducts = async (req, res, next) => {
+  try {
+    const products = await Product.find();
+    const dataInfo = {
+      message: "products found successfully",
+      products,
+    };
+    return successResMsg(res, 200, dataInfo);
+  } catch (error) {
+    return next(new AppError(error.message, 500));
+  }
+};
+
+// fetch all comments for a product
+exports.fetchProductComments = catchAsync(async (req, res) => {
+  try {
+    const comments = await Comment.find({
+      product: req.params.productId,
+    }).select(["comment", "-_id"]);
+    const dataInfo = {
+      message: "comments found successfully",
+      comments,
+    };
+    return successResMsg(res, 200, dataInfo);
+  } catch (error) {
+    return next(new AppError(error.message, 500));
+  }
+});

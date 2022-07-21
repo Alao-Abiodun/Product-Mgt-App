@@ -50,6 +50,7 @@ app.use(mongoSanitize()); // Checks the request headers, query strings, params f
 const { authRouter } = require("./routes/auth/index");
 const { userRouter } = require("./routes/user/user.route");
 const { productRouter } = require("./routes/product/product.route");
+const { commentRouter } = require("./routes/comment/comment.route");
 
 //default Route
 app.get("/", (req, res) => {
@@ -65,6 +66,7 @@ app.get("/api/v1/home", (req, res) => {
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/product", productRouter);
+app.use("/api/v1/comment", commentRouter);
 
 // Unhandled Routes
 app.all("*", (req, res) => {

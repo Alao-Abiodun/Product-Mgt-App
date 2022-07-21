@@ -12,10 +12,10 @@ const commentSchema = new Schema(
       ref: "Product",
       required: true,
     },
-    comments: {
+    comment: {
       type: String,
     },
-    reply: [
+    replies: [
       {
         type: Schema.Types.ObjectId,
         ref: "Reply",

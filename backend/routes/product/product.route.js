@@ -8,4 +8,11 @@ router.post(
   productController.uploadProduct
 );
 
+router.get("/fetch", productController.fetchProducts);
+
+router.get(
+  "/fetchProductComment/:productId",
+  productController.fetchProductComments
+);
+
 module.exports.productRouter = router;
