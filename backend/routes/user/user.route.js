@@ -1,6 +1,9 @@
-const router = require('express').Router();
-const userController = require('../../controllers/user/user.controller');
+const router = require("express").Router();
+const userController = require("../../controllers/user/user.controller");
 
-router.get('/viewProductSpecifiedLocation', userController.viewProductBySpecifiedLocation)
+router.get(
+  "/viewProductSpecifiedLocation/:location",
+  userController.viewProductBySpecifiedLocation
+);
 
 module.exports.userRouter = router;

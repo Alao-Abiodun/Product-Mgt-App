@@ -1,18 +1,6 @@
 const { Schema, model } = require("mongoose");
 const validator = require("validator");
 
-const geoSchema = new Schema({
-  type: {
-    type: String,
-    enum: ["Point"],
-    default: "Point",
-  },
-  coordinates: {
-    type: [Number],
-    index: "2dsphere",
-  },
-});
-
 const productSchema = new Schema(
   {
     user: {
@@ -30,7 +18,21 @@ const productSchema = new Schema(
       default:
         "https://res.cloudinary.com/oluwatobiloba/image/upload/v1628753027/Grazac/avatar_cihz37.png",
     },
-    geo_details: geoSchema,
+    address: {
+      type: String,
+      required: [true, "Please add an address"],
+    },
+    // location: {
+    //   type: {
+    //     type: String,
+    //     enum: ["Point"],
+    //   },
+    //   coordinates: {
+    //     type: [Number],
+    //     index: "2dsphere",
+    //   },
+    //   formattedAddress: String,
+    // },
     comment: [
       {
         type: Schema.Types.ObjectId,
@@ -44,6 +46,8 @@ const productSchema = new Schema(
 );
 
 productSchema.index({ coordinates: "2dsphere" });
+
+// productSchema.pre("save", function () {});
 
 const Product = model("Product", productSchema);
 

@@ -4,24 +4,24 @@ const AppError = require("../../utils/libs/appError");
 const catchAsync = require("../../utils/libs/catchAsync");
 const { cloudinaryUploadMethod } = require("../../utils/libs/cloudinaryUpload");
 
-exports.createProduct = catchAsync(async (req, res, next) => {
+exports.uploadProduct = async (req, res, next) => {
   try {
-    const { user, name, geo_details, comment } = req.body;
-    const newPath = await cloudinaryUploadMethod(req.file);
-    const image = newPath.res;
+    const { user, name, address } = req.body;
+    const { path } = req.file;
+    const newPath = await cloudinaryUploadMethod(path);
+    const imageUrl = newPath.res;
     const newProduct = await Product.create({
       user,
       name,
-      geo_details,
-      comment,
-      image,
+      address,
+      image: imageUrl,
     });
     const dataInfo = {
-      message: "Product created successfully",
+      message: "Product uploaded successfully",
       newProduct,
     };
     return successResMsg(res, 201, dataInfo);
   } catch (error) {
-    return next(new AppError(error.message, error.statusCode));
+    return next(new AppError(error.message, 500));
   }
-});
+};
