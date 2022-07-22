@@ -9,7 +9,6 @@ import { loginData } from 'constant/authData';
 import { loginUser } from 'services/auth';
 import { useBookmarkState } from 'context/context';
 import { toast } from 'react-toastify';
-import Loading from 'components/Loading/Loading';
 
 const Login = (props) => {
   const navigate = useNavigate();
@@ -90,7 +89,7 @@ const Login = (props) => {
             <p>Forgot password?</p>
           </Link>
         </div>
-        <Button>{loading ? <Loading /> : 'Login'}</Button>
+        <Button>'Login'</Button>
       </form>
       <Google />
     </>

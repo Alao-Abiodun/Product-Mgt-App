@@ -11,12 +11,9 @@ import Close from 'assets/close.png';
 import { registerData } from 'constant/authData';
 import { registerUser } from 'services/auth';
 import { toast } from 'react-toastify';
-import Loading from 'components/Loading/Loading';
-
-
 
 const SignUp = (props) => {
-  const navigate =  useNavigate();
+  const navigate = useNavigate();
   const [type, setType] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -58,11 +55,10 @@ const SignUp = (props) => {
       console.log(response.data.message);
       setLoading(false);
       setShowModal(true);
-      navigate('/login'); 
+      navigate('/login');
     } catch (error) {
       console.log(error.response.data.message);
       toast.error(error.response.data.message);
-      
     }
   };
   const close = () => {
@@ -100,16 +96,15 @@ const SignUp = (props) => {
           <span className={styles.rent}> Terms & Conditions</span> and
           <span className={styles.rent}> Privacy Policy</span>
         </p>
-        <Button>{loading ? <Loading /> : 'Create Account'}</Button>
-
+        <Button>'Create Account'</Button>
       </form>
-        <Google />
-        <p className={styles.p3}>
-          Already have an account?
-          <Link to="/login">
-            <span className={styles.rent}> Login</span>
-          </Link>
-        </p>
+      <Google />
+      <p className={styles.p3}>
+        Already have an account?
+        <Link to="/login">
+          <span className={styles.rent}> Login</span>
+        </Link>
+      </p>
       {showModal && (
         <Modal>
           <div className={styles.modal}>
@@ -123,7 +118,7 @@ const SignUp = (props) => {
                 authenticate your email.
               </p>
               <button onClick={close}>
-                <img src={Close} alt="close"/>
+                <img src={Close} alt="close" />
               </button>
             </div>
           </div>

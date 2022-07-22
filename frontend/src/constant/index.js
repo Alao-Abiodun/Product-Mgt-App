@@ -1,24 +1,3 @@
-import House1 from 'assets/houses/House1.webp';
-import House2 from 'assets/houses/House2.webp';
-import House3 from 'assets/houses/House3.webp';
-import House4 from 'assets/houses/House4.webp';
-import House5 from 'assets/houses/House5.webp';
-import House6 from 'assets/houses/House6.webp';
-import House7 from 'assets/houses/House7.webp';
-import House8 from 'assets/houses/House8.webp';
-import House9 from 'assets/houses/House9.webp';
-import House10 from 'assets/houses/House10.webp';
-import House11 from 'assets/houses/House11.webp';
-import House12 from 'assets/houses/House12.webp';
-import House13 from 'assets/houses/House13.webp';
-import House14 from 'assets/houses/House14.webp';
-import House15 from 'assets/houses/House15.webp';
-import House16 from 'assets/houses/House16.webp';
-import House17 from 'assets/houses/House17.webp';
-import House18 from 'assets/houses/House18.webp';
-
-
-
 export const locations = [
   { value: 'Abia', label: 'Abia' },
   { value: 'Adamawa', label: 'Adamawa' },
@@ -187,22 +166,22 @@ export const postHouseRegLinks = [
   //   disabled: true,
   // },
 ];
-export const Bathrooms =[
+export const Bathrooms = [
   { value: 'Bathrooms', label: 'Bathrooms' },
   { value: '1', label: '1' },
   { value: '2', label: '2' },
   { value: '3', label: '3' },
   { value: '4', label: '4' },
   { value: '5', label: '5' },
-]
-export const Bedrooms =[
+];
+export const Bedrooms = [
   { value: 'Bedrooms', label: 'Bedrooms' },
   { value: '1', label: '1' },
   { value: '2', label: '2' },
   { value: '3', label: '3' },
   { value: '4', label: '4' },
   { value: '5', label: '5' },
-]
+];
 export const apartments = [
   {
     id: 1,
@@ -212,7 +191,7 @@ export const apartments = [
     propertyType: 'Mini Flat',
     bedroomNumber: 1,
     bathroomNumber: 1,
-    status: 'approved'
+    status: 'approved',
   },
   {
     id: 2,
@@ -222,8 +201,7 @@ export const apartments = [
     propertyType: 'Semi Detached Bungalow',
     bedroomNumber: 3,
     bathroomNumber: 2,
-    status: 'declined'
-
+    status: 'declined',
   },
   {
     id: 3,
@@ -233,7 +211,7 @@ export const apartments = [
     propertyType: 'Mini Flat',
     bedroomNumber: 2,
     bathroomNumber: 2,
-    status: 'pending'
+    status: 'pending',
   },
   {
     id: 4,
@@ -243,7 +221,7 @@ export const apartments = [
     propertyType: 'Mini Flat',
     bedroomNumber: 2,
     bathroomNumber: 2,
-    status: 'approved'
+    status: 'approved',
   },
   {
     id: 5,
@@ -253,7 +231,7 @@ export const apartments = [
     propertyType: 'Mini Flat',
     bedroomNumber: 2,
     bathroomNumber: 2,
-    status: 'approved'
+    status: 'approved',
   },
 
   {
@@ -264,7 +242,7 @@ export const apartments = [
     propertyType: 'Mini Flat',
     bedroomNumber: 2,
     bathroomNumber: 2,
-    status: 'approved'
+    status: 'approved',
   },
   {
     id: 7,
