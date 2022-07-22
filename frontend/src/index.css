@@ -1,0 +1,97 @@
+@import url(//db.onlinewebfonts.com/c/860c3ec7bbc5da3e97233ccecafe512e?family=Circular+Std+Book);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+html {
+  font-size: 100%;
+
+  scroll-behavior: initial;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  max-width: 1440px;
+  text-decoration: none;
+
+}
+
+@import url(//db.onlinewebfonts.com/c/860c3ec7bbc5da3e97233ccecafe512e?family=Circular+Std+Book);
+
+@font-face {
+  font-family: 'Circular-Std-500';
+  src: url(./assets/circular-std-medium-500.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.slick-arrow {
+  display: none !important;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+
+:root {
+  --CircularStd: 'Circular-Std-500';
+  --CircularStdBook: 'Circular Std Book';
+}
+
+nav a.active {
+  color: #7453EE !important;
+}
+
+
+.pageItem {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-family: var(--CircularStd);
+  font-style: normal;
+  font-weight: 450;
+  font-size: 19px;
+  line-height: 24px;
+  color: #263238;
+  margin-left: 10px;
+
+}
+
+.pageItem-active {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-family: var(--CircularStd);
+  font-style: normal;
+  font-weight: 450;
+  font-size: 19px;
+  line-height: 24px;
+  /* color: #263238; */
+  margin-left: 10px;
+  background-color: #7453EE;
+  color: #FFFFFF;
+}
+
+.pageItem:hover {
+  background-color: #7453EE;
+  color: #FFFFFF;
+}

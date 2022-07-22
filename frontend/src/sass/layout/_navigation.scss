@@ -1,0 +1,23 @@
+.navigation {
+  position: relative;
+
+  &-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+  }
+
+  &-item {
+    font-size: 1.2rem;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &-link {
+    padding-bottom: 0.3rem;
+    text-decoration: none;
+    color: rgba($color-white, .9);
+  }
+}

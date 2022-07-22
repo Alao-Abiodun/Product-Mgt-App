@@ -1,0 +1,31 @@
+.modal {
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}
+
+.modal-container {
+
+    /* width: 700px; */
+    /* max-width: 90%; */
+    /* background: red; */
+    /* width: 700px; */
+    /* max-width: 90%; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* width: 800px; */
+    max-width: 90%;
+    /* margin: 1rem auto; */
+    margin-top: 85px;
+    margin-bottom: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    /* place-items: center; */
+}

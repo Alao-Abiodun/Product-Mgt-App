@@ -1,0 +1,31 @@
+.header {
+  // background-color: $color-white;
+  background-color: rgba(0, 0, 0, .8);
+  // box-shadow: 10px 10px 10px #ccc;
+  padding: 1rem;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  &-container {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &-brand {
+    font-family: $font-family-secondary;
+    margin-right: auto;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  &-link {
+    text-decoration: none;
+    color: $color-white;
+    // color: $color-white;
+  }
+}

@@ -1,0 +1,25 @@
+.register-section {
+  height: calc(100vh - 71px);
+  width: 100%;
+  margin-top: 13rem;
+  &-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      @include header;
+    }
+
+    &-container {
+      align-self: stretch;
+      display: grid;
+      grid-gap: 30px;
+      @include formgrid(3);
+    }
+  }
+}

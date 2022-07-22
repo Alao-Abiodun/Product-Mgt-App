@@ -47,7 +47,7 @@ const normalizePort = (val) => {
   return false;
 };
 
-const port = normalizePort(process.env.PORT || "8888");
+const port = normalizePort(process.env.PORT || "3331");
 
 /**
  * Event listener for HTTP server "listening" event.

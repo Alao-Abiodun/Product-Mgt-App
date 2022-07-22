@@ -1,0 +1,19 @@
+@mixin formgrid($number) {
+  @if $number == 1 {
+    grid-template-columns: 100%;
+  }
+  @if $number == 2 {
+    grid-template-columns: repeat(1, 100%);
+    // grid-gap: 30px;
+  }
+  @if $number > 2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@mixin header {
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: $color-primary;
+}

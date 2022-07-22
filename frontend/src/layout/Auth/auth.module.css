@@ -1,0 +1,80 @@
+.main {
+  height: 100vh;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.logoContainer span {
+  font-size: 24px;
+  padding-left: 9px;
+  font-weight: bolder;
+  color: #191f2b;
+  font-family: var(--gilroy-bold);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.main a {
+  text-decoration: none;
+}
+
+.AuthBg {
+  width: 50%;
+  height: 100vh;
+}
+
+.AuthBg img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.whiteBg {
+  width: 50%;
+  padding: 4rem 3rem 4rem 7rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.whiteBg::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.whitepart Button2 {
+  align-items: center;
+}
+
+@media screen and (max-width: 979px) {
+  .whiteBg {
+    padding: 4rem 3rem 0 3rem;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .whiteBg {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .AuthBg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .whiteBg {
+    padding: 4rem 0rem 0 0rem;
+  }
+}
+@media screen and (max-width: 387px) {
+  .whiteBg {
+   width: 90%;
+  }
+}

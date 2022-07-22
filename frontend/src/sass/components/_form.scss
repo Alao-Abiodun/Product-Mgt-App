@@ -1,0 +1,55 @@
+.form {
+  padding: 2rem 4rem 4rem 4rem;
+  width: 600px;
+  max-width: 90%;
+
+  box-shadow: 1px 3px 80px -20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+  &-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $color-black-2;
+    font-size:.9rem;
+  }
+
+  &-input {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border: 1px solid $color-black-2;
+    border-radius: 5px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-family: inherit;
+    &::-webkit-input-placeholder {
+      color: $color-black-2;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-textarea {
+    min-height: 200px;
+    max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  &-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-valid {
+    border: 1px solid green;
+  }
+
+  &-invalid {
+    border: 1px solid red;
+    background-color: #fda49a;
+  }
+}
